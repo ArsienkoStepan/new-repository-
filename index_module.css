@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css2?family=Revalia&family=Roboto:wght@400;500;700&display=swap');
+* {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto';
+}
+/* header */
+header {
+    width: 100%;
+    height: auto;
+    background: #EEEFF1;
+    padding-bottom: 30px;
+}
+.menu {
+    width: 70%;
+    margin: 0 auto;
+    height: auto;
+    background: #EEEFF1;
+    display: flex;
+    justify-content: space-between;
+}
+.logo {
+    font-family: 'Revalia';
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 60px;
+    color: #34547A;
+}
+.list {
+    display: flex;
+    list-style: none;
+    font-weight: 400;
+    line-height: 26px;
+    font-size: 10px;
+    text-transform: uppercase;
+    position: absolute;
+    display: none;
+}
+.list a {
+    text-decoration: none;
+    color: black;
+}
+.item {
+    padding-right: 20px;
+}
+.item:first-child a {
+    color: #34547A;
+    font-weight: 500;
+}
+.item a:hover {
+    color: red;
+    transition: .3s ease-in;
+}
+.nav {
+    display: flex;
+}
+#menu_toggle {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    right: -30px;
+    visibility: hidden;
+}
+.menu_btn {
+    display: flex;
+    align-items: center;  
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top: 23px;
+    right: -30px;
+}
+.menu_btn > span, 
+.menu_btn > span::before,
+.menu_btn > span::after {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #34547A;
+}
+.menu_btn  span::before {
+    content: '';
+    top: -10px;
+}
+.menu_btn  span::after {
+    content: '';
+    top: 10px;
+}
+#menu_toggle:checked ~ .menu_btn > span {
+    transform: rotate(45deg);
+}
+#menu_toggle:checked ~ .menu_btn > span::before {
+    top: 0;
+    transform: rotate(0);
+}
+#menu_toggle:checked ~ .menu_btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+#menu_toggle:checked ~ .menu_btn > span,
+#menu_toggle:checked ~ .menu_btn > span::before,
+#menu_toggle:checked ~ .menu_btn > span::after {
+    transition: .2s ease-in-out;
+} 
+#menu_toggle:checked ~ .list {
+    right: 0;
+    top: 52px;
+    width: 100%;
+    height: auto;
+    background: #EEEFF1;
+    z-index: 1;
+    flex-direction: column; 
+    display: inline;
+    transition: .5s ease-in-out;
+}
+#menu_toggle:checked ~ .list > .item {
+    display: flex;
+    padding-bottom: 30px;
+    justify-content: center;
+    transition: .4s ease-in-out;
+}
+.second-floor {
+    display: flex;
+    flex-direction: column;
+}
+.comp {
+    margin: 30px auto;
+    order: 1;
+    transition: .3s ease-in;
+}
+.comp > img {
+    max-width: 100%;
+    height: auto;
+}
+.comp:hover {
+    transform: rotate(360deg);
+}
+.written_cont {
+    order: -1;
+}
+.text {
+    min-width: 320px;
+    height: auto;
+}
+.text h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+}
+.text p {
+    color: #727272;
+    text-align: center;
+}
+.write_me {
+    background: #34547A;
+    min-width: 225px;
+    height: 65px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 65px;
+}
+.btn_write_me {
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    border: none;
+}
+/* обо мне */
+.about {
+    width: 100%;
+    height: auto;
+    background: white;
+    padding: 50px 0 50px 0;
+}
+.about_me {
+    min-width: 35%;
+    margin: 0 auto;
+}
+.about_me > h2 {
+    font-weight: 500;
+    font-size: 30px;
+    text-align: center;
+}
+.about_me > p {
+    color: #727272;
+    text-align: center;
+}
+/* 40+ проектов */
+.blue {
+    background: #34547A;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.projects {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-color: #34547A;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.project_img {
+    display: flex;
+}
+.img {
+    margin-top: 20px;
+    margin-left: 5px;
+}
+.img_desription {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.img_desription > h3 {
+    margin: 0;
+    margin-bottom: 5px;
+    color: white;
+    font-size: 21px;
+    font-weight: 500;
+}
+.img_desription > p {
+    margin: 0;
+    color: white;
+}
+/* мои навыки */
+.third_screen {
+    max-width: 100%;
+    height: auto;
+    background: white;
+}
+.skills {
+    max-width: 414px;
+    height: auto;
+    background: white;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+}
+.skills_block {
+    width: 100%;
+    height: auto;
+}
+.skills_block > h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+}
+.skills_block > p {
+    color: #727272;
+}
+.photoshop {
+    min-width: 80%;
+    height: 5px;
+    background: #C4C4C4;
+}
+.man {
+    margin-top: 50px;
+}
+.man img {
+    max-width: 100%;
+    height: auto;
+}
+.inside-line {
+    width: 75%;
+    height: 5px;
+    background: #34547A;
+}
+/* секция с видео */
+.work {
+    max-width: 100%;
+    height:auto;
+    background: #EEEFF1;
+}
+.about_work {
+    max-width: 414px;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.lorem {
+    margin-left: 20px;
+}
+.about_work > p {
+    margin-top: 30px;
+    color: #727272;
+}
+.video {
+    display: flex;
+    justify-content: center;
+}
+video {
+    margin-top: 60px;
+    max-width: 100%;
+    height: auto;
+}
+/* секция с картинками */
+.project_block {
+    max-width: 414px;
+    height: auto;
+    background: white;
+}
+.pictures {
+    margin-top: 28px;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.img_1,
+.img_2 {
+    max-width: 50%;
+    height: auto;
+}
+.img_1 > img,
+.img_2 > img {
+    max-width: 100%;
+    height: auto;
+}
+/* часть майкрософт */
+.microsoft {
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    background: white;
+}
+.ms_picture {
+    margin: 0 auto;
+    max-width: 250px;
+    max-height: 120px;
+}
+.ms_picture:nth-child(n+2) {
+    display: none;
+}
+/* перед формами */
+.last {
+    max-width: 100%;
+    height: auto;
+    background: #EEEFF1;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.last_text {
+    margin: 0 auto;
+    max-width: 525px;
+    height: auto;
+    text-align: center;
+}
+.last_text > p {
+    margin-top: 30px;
+    color: #727272;
+}
+/* формы */
+form {
+    margin-top: 30px;
+}
+.inputs {
+    margin: 0 auto;
+    max-width: 414px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.input_name,
+.input_mail {
+    box-sizing: border-box;
+    max-width: 100%;
+    height: auto;
+    background: white;
+}
+.input_mail {
+    margin-top: 10px;
+}
+input {
+    width: 100%;
+    height: 50px;
+    border: 0;
+    padding: 17px 0 18px 20px;
+}
+input::placeholder,
+textarea::placeholder {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 400;
+    color: #5F5D5D;
+}
+.textarea {
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    margin-top: 10px;
+}
+textarea {
+    width: 100%;
+    height: 175px;
+    border: 0;
+    resize: none;
+    padding: 17px 0 0 20px;
+}
+.last_btn {
+    display: block;
+    width: 190px;
+    height: 55px;
+    background: #34547A;
+    border: 0;
+    margin: 50px auto 0 auto ;
+
+}
+.send {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+/* футер */
+footer {
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+    background: #34547A;
+}
+.foot_block {
+    max-width: 70%;
+    background-color: 34547A;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.name_rigths > h3 {
+    color: white;
+}
+.name_rigths > p {
+    color: white;
+    font-size: 13px;
+}
+.icon_vk {
+    display: flex;
+    align-items: center;
+}
+.inside_vk:nth-child(n+2) {
+    display: none;
+}
+.inside_vk:nth-last-child(n+1) {
+    margin-left: 20px;
+}
+
